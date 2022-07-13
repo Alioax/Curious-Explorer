@@ -79,6 +79,8 @@ class handler(BaseHTTPRequestHandler):
         for post in posts:
             name = post['data']['name']
             if name not in names_sent:
+                send('sendMessage', name, bot_token=REPEAT_CONTROL_BOT_TOKEN,
+                     target=CACHE_CHANNEL_ID)
                 if 'reddit_video_preview' in post['data']['preview']:
                     send('sendVideo', post['data']['title'], post['data']
                          ['preview']['reddit_video_preview']["fallback_url"])
@@ -89,10 +91,7 @@ class handler(BaseHTTPRequestHandler):
                     else:
                         send('sendPhoto', post['data']['title'],
                              post['data']['url_overridden_by_dest'])
-                send('sendMessage', name, bot_token=REPEAT_CONTROL_BOT_TOKEN,
-                     target=CACHE_CHANNEL_ID)
             else:
                 print('denied a repeated message')
         print('Code Finished! Bye World for a few hours.')
-
         return
