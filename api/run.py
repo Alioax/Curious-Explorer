@@ -26,7 +26,7 @@ class handler(BaseHTTPRequestHandler):
             'password': 'o91759o9576'  # reddit's account password
         }
 
-        subreddit = "EroticArt"
+        subreddit = "Art"
         listing = "hot"  # listing category
         limit = "10"  # posts to check
 
