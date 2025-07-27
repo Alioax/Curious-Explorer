@@ -26,7 +26,7 @@ class handler(BaseHTTPRequestHandler):
             'password': 'o91759o9576'  # reddit's account password
         }
 
-        subreddit = "Art"
+        subreddit = "midjourney"
         listing = "hot"  # listing category
         limit = "10"  # posts to check
 
